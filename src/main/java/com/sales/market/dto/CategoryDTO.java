@@ -1,6 +1,7 @@
-package com.sales.market.model;
+package com.sales.market.dto;
 
-import com.sales.market.dto.CategoryDTO;
+import com.sales.market.model.Category;
+import com.sales.market.model.ModelBase;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,8 +12,7 @@ import javax.persistence.Entity;
  */
 @Getter
 @Setter
-@Entity
-public class Category extends ModelBase<CategoryDTO> {
+public class CategoryDTO extends DTOBase<Category> {
     private String name;
     private String code;
 }

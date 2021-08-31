@@ -1,6 +1,8 @@
-package com.sales.market.model;
+package com.sales.market.dto;
 
-import com.sales.market.dto.ItemDTO;
+import com.sales.market.model.Item;
+import com.sales.market.model.ModelBase;
+import com.sales.market.model.SubCategory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,12 +14,10 @@ import javax.persistence.OneToOne;
  */
 @Getter
 @Setter
-@Entity
-public class Item extends ModelBase<ItemDTO> {
+public class ItemDTO extends DTOBase<Item> {
     private String name;
     private String code;
     private Byte[] image;
 
-    @OneToOne(targetEntity = SubCategory.class)
     private SubCategory subCategory;
 }

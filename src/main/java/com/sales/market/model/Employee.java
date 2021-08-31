@@ -1,11 +1,14 @@
 package com.sales.market.model;
 
+import com.sales.market.dto.EmployeeDTO;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
+
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * @author arturo
@@ -13,11 +16,11 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class Employee {
-    @Id
-    private Long id;
+public class Employee extends ModelBase<EmployeeDTO> {
     private String firstName;
     private String lastName;
     private Byte[] image;
-//    private List<Contract> contracts;
+
+    @OneToMany(mappedBy = "employee", fetch = LAZY, cascade = {MERGE, PERSIST, REMOVE})
+    private List<Contract> contracts;
 }

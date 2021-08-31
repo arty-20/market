@@ -1,19 +1,15 @@
 package com.sales.market.model;
 
-import com.sales.market.dto.PositionDTO;
+import com.sales.market.dto.FeatureDTO;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
 
-/**
- * @author arturo
- */
 @Getter
 @Setter
 @Entity
-public class Position extends ModelBase<PositionDTO> {
-
-
+public class Feature extends ModelBase<FeatureDTO> {
     private String name;
+
 }

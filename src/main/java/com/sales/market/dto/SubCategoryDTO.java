@@ -1,6 +1,8 @@
-package com.sales.market.model;
+package com.sales.market.dto;
 
-import com.sales.market.dto.SubCategoryDTO;
+import com.sales.market.model.Category;
+import com.sales.market.model.ModelBase;
+import com.sales.market.model.SubCategory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +14,9 @@ import javax.persistence.OneToOne;
  */
 @Getter
 @Setter
-@Entity
-public class SubCategory extends ModelBase<SubCategoryDTO> {
+public class SubCategoryDTO extends DTOBase<SubCategory> {
     private String name;
     private String code;
 
-    @OneToOne(optional = false)
     private Category category;
 }
